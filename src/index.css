@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 68 40% 95%;
+    --foreground: 25 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 20%;
+
+    --primary: 142 24% 40%;
+    --primary-foreground: 60 40% 98%;
+
+    --secondary: 84 45% 46%;
+    --secondary-foreground: 60 40% 98%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 20% 40%;
+
+    --accent: 84 45% 46%;
+    --accent-foreground: 60 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 10% 80%;
+    --input: 40 10% 80%;
+    --ring: 142 24% 40%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 30% 10%;
+    --foreground: 60 40% 98%;
+
+    --card: 25 20% 15%;
+    --card-foreground: 60 40% 98%;
+
+    --popover: 25 20% 15%;
+    --popover-foreground: 60 40% 98%;
+
+    --primary: 142 24% 40%;
+    --primary-foreground: 60 40% 98%;
+
+    --secondary: 84 45% 46%;
+    --secondary-foreground: 60 40% 98%;
+
+    --muted: 25 20% 20%;
+    --muted-foreground: 25 10% 70%;
+
+    --accent: 84 45% 46%;
+    --accent-foreground: 60 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 40% 98%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 142 24% 40%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+}
+
+.leaflet-control-container .leaflet-control {
+  margin: 10px;
+}
+
+.leaflet-marker-icon {
+  filter: hue-rotate(60deg); /* Make markers green to match theme */
+}
+
+/* Animation for fade-in */
+.fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

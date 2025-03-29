@@ -1,25 +1,18 @@
-import { FarmData, LocationCoordinates } from "../types";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchFarmDataForLocation = async (
   coordinates: LocationCoordinates,
   address: string
 ): Promise<FarmData> => {
-  const response = await fetch("http://localhost:8000/analyze", {
+  const response = await fetch(`${API_URL}/analyze`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
-      address,
-    }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ latitude: coordinates.latitude, longitude: coordinates.longitude, address }),
   });
 
   if (!response.ok) {
     throw new Error("Failed to fetch farm data");
   }
 
-  const data: FarmData = await response.json();
-  return data;
+  return await response.json();
 };

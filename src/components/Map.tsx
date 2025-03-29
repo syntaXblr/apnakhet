@@ -82,22 +82,6 @@ const MapMyIndiaMap: React.FC<MapProps> = ({ onLocationSelect, selectedLocation,
           )}
         </MapContainer>
       </div>
-
-      {/* Predefined locations quick select */}
-      <div className="absolute bottom-4 left-4 right-4 bg-white shadow-md rounded-md p-3 z-[1000]">
-        <p className="text-sm font-medium mb-2">Quick Select Locations:</p>
-        <div className="grid grid-cols-2 gap-2">
-          {predefinedLocations.map((location) => (
-            <button 
-              key={location.name}
-              onClick={() => onLocationSelect(location.coords)}
-              className="bg-primary text-white text-sm p-2 rounded hover:bg-primary/90"
-            >
-              {location.name}
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
